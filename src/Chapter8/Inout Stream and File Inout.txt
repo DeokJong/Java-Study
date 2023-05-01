@@ -1,0 +1,24 @@
+바이너리 계열의 스트림
+InputStream/OutputStream
+    >>이들은 모두 abstract class 이다.
+    >>그렇기에 실질적으로 존재하는 함수가 없다.
+
+FileInputStream/FileOutputStream
+    >>이들은 모두 abstract class 의 implementation class 이다.
+    >>이들은 모두 '("파일의 위치") || (System.in || System.out)' 를 지정한다.
+        >>FileInputStream fin = new FileInputStream(System.in);
+        >>FileInputStream fin = new FileInputStream("C:\\Temp\\Test.txt");
+
+문자 계열의 스트림
+Reader/Writer
+    >>이들은 모두 abstract class 이다.
+    >>그렇기에 실질적으로 존재하는 함수가 없다.
+
+InputStreamReader/OutputStreamWriter
+    >>이들은 모두 abstract class 의 implementation class 이다.
+    >>이들은 '("파일의 위치" || System.in || System.out || 바이너리계열 스트림의 이름 , "인코딩 형식")'으로 지정한다
+        >>InputStreamReader in = new InputStreamReader(System.in,"US-ASCII");
+
+FileReader/FileWriter
+    >>이들은 모두 InputStreamReader/OutputStreamWriter 를 상속받는 Class 이다.
+    >>FileReader in = new FileReader("파일의 위치")
